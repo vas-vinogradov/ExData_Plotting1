@@ -5,7 +5,7 @@ data<-data[as.Date(data$Date,"%d/%m/%Y")>=as.Date("2007-02-01") & as.Date(data$D
 ##Builiding DateTime Column
 data$DateTime<-strptime(paste(data$Date,data$Time),"%d/%m/%Y %H:%M:%S")
 ##Creating 
-png(filename = "plot3.png",width = 480, height = 480, units = "px")
+png(filename = "plot4.png",width = 480, height = 480, units = "px")
 ##Creating Line Plot with Sub Metering 1 on it,
 par(mfrow=c(2,2))
 ##Creating Line Plot for Active Power

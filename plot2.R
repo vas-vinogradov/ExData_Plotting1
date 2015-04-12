@@ -6,7 +6,7 @@ data<-data[as.Date(data$Date,"%d/%m/%Y")>=as.Date("2007-02-01") & as.Date(data$D
 data$DateTime<-strptime(paste(data$Date,data$Time),"%d/%m/%Y %H:%M:%S")
 ##Creating 
 png(filename = "plot2.png",width = 480, height = 480, units = "px")
-##Creating Line Plot Histogram go Active Power
+##Creating Line Plot for Active Power
 plot(data$DateTime,data$Global_active_power,type="l", ylab="Global Active Power (kilowatts)", xlab="")
 ##releasing device
 dev.off()

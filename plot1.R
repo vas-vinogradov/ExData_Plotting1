@@ -4,5 +4,9 @@ data<-read.csv("household_power_consumption.txt",na.string="?",sep=";",colClasse
 data<-data[as.Date(data$Date,"%d/%m/%Y")>=as.Date("2007-02-01") & as.Date(data$Date,"%d/%m/%Y")<=as.Date("2007-02-02"),]
 ##Builiding DateTime Column
 data$DateTime<-strptime(paste(data$Date,data$Time),"%d/%m/%Y %H:%M:%S")
-##Creating Plot Histogram go Active Power
+##Creating png
+png(filename = "plot1.png",width = 480, height = 480, units = "px")
+##Creating Plot Histogram for Active Power
 hist(data$Global_active_power,col="red",xlab="Global Active Power (kilowatts)",ylab="Frequency",main="Global Active Power")
+##releasing device
+dev.off()
